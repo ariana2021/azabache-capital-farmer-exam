@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generador de Cotizaciones Legales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f7f7f7;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      max-width: 500px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de Cotización Legal</h2>
+
+  <form action="/generar-cotizacion" method="post">
+    <label for="nombre">Nombre del cliente:</label>
+    <input type="text" name="nombre" id="nombre" required />
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" name="correo" id="correo" required />
+
+    <label for="tipo_servicio">Tipo de servicio:</label>
+    <select name="tipo_servicio" id="tipo_servicio" required>
+      <option value="">-- Seleccione --</option>
+      <option value="Constitución de empresa">Constitución de empresa</option>
+      <option value="Defensa laboral">Defensa laboral</option>
+      <option value="Consultoría tributaria">Consultoría tributaria</option>
+    </select>
+
+    <label for="descripcion">Descripción del caso:</label>
+    <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+
+    <button type="submit">Generar Cotización</button>
+  </form>
+</body>
+</html>
